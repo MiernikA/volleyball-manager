@@ -337,3 +337,10 @@ h1,h2,h3,strong,b,button{font-stretch:normal}
 .app-nav button.active{color:#fff;background:linear-gradient(#0b668caa,#07324e88)}
 .app-nav button.active::after{background:#2ce0f0;box-shadow:0 0 7px #2ce0f0}
 .app-nav button:disabled{background:transparent}
+
+/* Stałe miejsce na scrollbar zapobiega zmianie szerokości między ekranami. */
+html{overflow-y:scroll;scrollbar-gutter:stable;background:#050d17;scrollbar-width:thin;scrollbar-color:#176789 #071725}
+html::-webkit-scrollbar{width:10px;height:10px}
+html::-webkit-scrollbar-track{background:#071725}
+html::-webkit-scrollbar-thumb{background:linear-gradient(#1989ad,#12506c);border:2px solid #071725;border-radius:8px}
+html::-webkit-scrollbar-thumb:hover{background:linear-gradient(#25b6df,#176f91)}

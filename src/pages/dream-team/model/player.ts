@@ -1,0 +1,8 @@
+export type PlayerPosition='S'|'OPP'|'OH'|'MB'|'L';
+export interface Player{id:string;firstName:string;lastName:string;displayName:string;position:PlayerPosition;birthDate:string|null;nationality:string|null;heightCm:number|null;weightKg:number|null;attackReachCm:number|null;blockReachCm:number|null;photoUrl:string|null;photoCredit?:string|null;photoCreditUrl?:string|null;sourceUrl:string}
+export interface PlayerDataset{metadata:{season:string;importedAt:string;source:string;coverage:string;complete:boolean;notes:string[]};players:Player[]}
+export const positionNames:Record<PlayerPosition,string>={S:'Rozgrywający',OPP:'Atakujący',OH:'Przyjmujący',MB:'Środkowy',L:'Libero'};
+export function ageOf(date:string|null,now=new Date()){if(!date)return null;const b=new Date(date);let age=now.getFullYear()-b.getFullYear();if(now.getMonth()<b.getMonth()||(now.getMonth()===b.getMonth()&&now.getDate()<b.getDate()))age--;return age}
+const fold=(v:string)=>v.normalize('NFD').replace(/\p{Diacritic}/gu,'').replace(/ł/g,'l').replace(/Ł/g,'L').toLocaleLowerCase('pl');
+export type PlayerSort='name'|'height'|'age';
+export function filterPlayers(players:Player[],query:string,position:'ALL'|PlayerPosition,sort:PlayerSort){const q=fold(query.trim());return players.filter(p=>(position==='ALL'||p.position===position)&&(!q||fold(`${p.firstName} ${p.lastName} ${p.displayName}`).includes(q))).sort((a,b)=>{if(sort==='height')return (b.heightCm??-1)-(a.heightCm??-1)||a.displayName.localeCompare(b.displayName,'pl');if(sort==='age')return (a.birthDate??'9999').localeCompare(b.birthDate??'9999')||a.displayName.localeCompare(b.displayName,'pl');return a.displayName.localeCompare(b.displayName,'pl')})}

@@ -1,4 +1,4 @@
-# PlusLiga Dream Team Builder — Omega Beta v0.0.2
+# PlusLiga Dream Team Builder — Omega Beta v0.0.3
 
 Przeglądarkowy kreator dwóch niezależnych składów siatkarskich. Działa całkowicie lokalnie: React, TypeScript, Vite, Tailwind CSS i Zustand.
 

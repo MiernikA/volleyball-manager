@@ -80,6 +80,6 @@ Oba pliki są snapshotami testu `engine.test.ts`, więc zawsze odpowiadają aktu
 
 ## Poza zakresem SIM-01
 
-- Statystyki zawodników i ich wpływ na akcje (SIM-19).
+- Model profilu zawodnika — zrobiony w SIM-02 ([sim-02-profil-zawodnika.md](sim-02-profil-zawodnika.md)); wpływ statystyk na akcje (SIM-19).
 - Podłączenie silnika do ekranu „Symulacja meczu” (odtwarzanie zdarzeń, tablica wyników, komentarz).
 - Adapter z `TeamConfiguration` + `Player[]` (Dream Team) do `MatchInput`.

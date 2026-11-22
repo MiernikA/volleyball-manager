@@ -1,3 +1,4 @@
+import { validatePlayerProfile } from './profile';
 import type { MatchInput, MatchRules, PlayerId, Rotation, RotationSlot, Score, SetNumber, TeamSide } from './types';
 
 export const rotationSlots: readonly RotationSlot[] = [1, 2, 3, 4, 5, 6];
@@ -61,6 +62,7 @@ export type MatchInputIssueCode =
   | 'unknown_player'
   | 'libero_in_rotation'
   | 'invalid_libero'
+  | 'invalid_profile'
   | 'invalid_rules';
 
 export interface MatchInputIssue {
@@ -106,6 +108,14 @@ export function validateMatchInput(input: MatchInput): MatchInputIssue[] {
     }
     if (team.liberoId && roles.has(team.liberoId) && roles.get(team.liberoId) !== 'L') {
       issues.push({ code: 'invalid_libero', side, message: `${side}: miejsce libero zajmuje zawodnik innej pozycji` });
+    }
+    // SIM-02: każdy zawodnik dopuszczony do meczu musi mieć kompletny, poprawny profil.
+    for (const player of team.players.filter(candidate => all.includes(candidate.id))) {
+      const profileIssues = validatePlayerProfile(player.profile);
+      if (profileIssues.length > 0 || player.profile.positions.primary !== player.role) {
+        const reason = profileIssues[0]?.message ?? 'pozycja w profilu nie zgadza się z pozycją zawodnika';
+        issues.push({ code: 'invalid_profile', side, message: `${side}: profil zawodnika ${player.id} jest niepoprawny (${reason})` });
+      }
     }
   }
   return issues;

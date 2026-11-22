@@ -5,6 +5,8 @@
  * Decyzje i uproszczenia względem przepisów: docs/sim-01-domena-meczu.md.
  */
 
+import type { PlayerProfile } from './profile';
+
 // ── Identyfikatory ────────────────────────────────────────────────────────────
 
 /** Strona meczu. „A” i „B” to drużyny z ekranu „Przygotowanie meczu”. */
@@ -23,6 +25,8 @@ export interface MatchPlayer {
   id: PlayerId;
   name: string;
   role: PlayerRole;
+  /** Kompletny profil symulacyjny (SIM-02) — wymagany, żeby zawodnik mógł zagrać w meczu. */
+  profile: PlayerProfile;
 }
 
 /** Ustawienie sześciu zawodników w strefach 1–6. */

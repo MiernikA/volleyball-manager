@@ -17,37 +17,282 @@
           {
             "id": "a-setter",
             "name": "Adam Rozgrywający",
-            "role": "S"
+            "role": "S",
+            "profile": {
+              "schemaVersion": 1,
+              "skills": {
+                "servePower": 55,
+                "serveAccuracy": 65,
+                "reception": 40,
+                "setting": 78,
+                "attack": 45,
+                "block": 50,
+                "defense": 60
+              },
+              "attributes": {
+                "jumping": 60,
+                "stamina": 70,
+                "consistency": 65,
+                "experience": 60
+              },
+              "positions": {
+                "primary": "S",
+                "secondary": []
+              },
+              "sources": {
+                "skills.servePower": "role_default",
+                "skills.serveAccuracy": "role_default",
+                "skills.reception": "role_default",
+                "skills.setting": "role_default",
+                "skills.attack": "role_default",
+                "skills.block": "role_default",
+                "skills.defense": "role_default",
+                "attributes.jumping": "role_default",
+                "attributes.stamina": "role_default",
+                "attributes.consistency": "role_default",
+                "attributes.experience": "role_default"
+              }
+            }
           },
           {
             "id": "a-opp",
             "name": "Artur Atakujący",
-            "role": "OPP"
+            "role": "OPP",
+            "profile": {
+              "schemaVersion": 1,
+              "skills": {
+                "servePower": 75,
+                "serveAccuracy": 55,
+                "reception": 30,
+                "setting": 25,
+                "attack": 78,
+                "block": 60,
+                "defense": 45
+              },
+              "attributes": {
+                "jumping": 70,
+                "stamina": 65,
+                "consistency": 60,
+                "experience": 60
+              },
+              "positions": {
+                "primary": "OPP",
+                "secondary": []
+              },
+              "sources": {
+                "skills.servePower": "role_default",
+                "skills.serveAccuracy": "role_default",
+                "skills.reception": "role_default",
+                "skills.setting": "role_default",
+                "skills.attack": "role_default",
+                "skills.block": "role_default",
+                "skills.defense": "role_default",
+                "attributes.jumping": "role_default",
+                "attributes.stamina": "role_default",
+                "attributes.consistency": "role_default",
+                "attributes.experience": "role_default"
+              }
+            }
           },
           {
             "id": "a-oh-1",
             "name": "Aleksander Przyjmujący",
-            "role": "OH"
+            "role": "OH",
+            "profile": {
+              "schemaVersion": 1,
+              "skills": {
+                "servePower": 62,
+                "serveAccuracy": 62,
+                "reception": 70,
+                "setting": 35,
+                "attack": 70,
+                "block": 52,
+                "defense": 62
+              },
+              "attributes": {
+                "jumping": 65,
+                "stamina": 70,
+                "consistency": 60,
+                "experience": 60
+              },
+              "positions": {
+                "primary": "OH",
+                "secondary": []
+              },
+              "sources": {
+                "skills.servePower": "role_default",
+                "skills.serveAccuracy": "role_default",
+                "skills.reception": "role_default",
+                "skills.setting": "role_default",
+                "skills.attack": "role_default",
+                "skills.block": "role_default",
+                "skills.defense": "role_default",
+                "attributes.jumping": "role_default",
+                "attributes.stamina": "role_default",
+                "attributes.consistency": "role_default",
+                "attributes.experience": "role_default"
+              }
+            }
           },
           {
             "id": "a-oh-2",
             "name": "Antoni Przyjmujący",
-            "role": "OH"
+            "role": "OH",
+            "profile": {
+              "schemaVersion": 1,
+              "skills": {
+                "servePower": 62,
+                "serveAccuracy": 62,
+                "reception": 70,
+                "setting": 35,
+                "attack": 70,
+                "block": 52,
+                "defense": 62
+              },
+              "attributes": {
+                "jumping": 65,
+                "stamina": 70,
+                "consistency": 60,
+                "experience": 60
+              },
+              "positions": {
+                "primary": "OH",
+                "secondary": []
+              },
+              "sources": {
+                "skills.servePower": "role_default",
+                "skills.serveAccuracy": "role_default",
+                "skills.reception": "role_default",
+                "skills.setting": "role_default",
+                "skills.attack": "role_default",
+                "skills.block": "role_default",
+                "skills.defense": "role_default",
+                "attributes.jumping": "role_default",
+                "attributes.stamina": "role_default",
+                "attributes.consistency": "role_default",
+                "attributes.experience": "role_default"
+              }
+            }
           },
           {
             "id": "a-mb-1",
             "name": "Adrian Środkowy",
-            "role": "MB"
+            "role": "MB",
+            "profile": {
+              "schemaVersion": 1,
+              "skills": {
+                "servePower": 58,
+                "serveAccuracy": 62,
+                "reception": 20,
+                "setting": 25,
+                "attack": 65,
+                "block": 76,
+                "defense": 35
+              },
+              "attributes": {
+                "jumping": 70,
+                "stamina": 65,
+                "consistency": 62,
+                "experience": 60
+              },
+              "positions": {
+                "primary": "MB",
+                "secondary": []
+              },
+              "sources": {
+                "skills.servePower": "role_default",
+                "skills.serveAccuracy": "role_default",
+                "skills.reception": "role_default",
+                "skills.setting": "role_default",
+                "skills.attack": "role_default",
+                "skills.block": "role_default",
+                "skills.defense": "role_default",
+                "attributes.jumping": "role_default",
+                "attributes.stamina": "role_default",
+                "attributes.consistency": "role_default",
+                "attributes.experience": "role_default"
+              }
+            }
           },
           {
             "id": "a-mb-2",
             "name": "Albert Środkowy",
-            "role": "MB"
+            "role": "MB",
+            "profile": {
+              "schemaVersion": 1,
+              "skills": {
+                "servePower": 58,
+                "serveAccuracy": 62,
+                "reception": 20,
+                "setting": 25,
+                "attack": 65,
+                "block": 76,
+                "defense": 35
+              },
+              "attributes": {
+                "jumping": 70,
+                "stamina": 65,
+                "consistency": 62,
+                "experience": 60
+              },
+              "positions": {
+                "primary": "MB",
+                "secondary": []
+              },
+              "sources": {
+                "skills.servePower": "role_default",
+                "skills.serveAccuracy": "role_default",
+                "skills.reception": "role_default",
+                "skills.setting": "role_default",
+                "skills.attack": "role_default",
+                "skills.block": "role_default",
+                "skills.defense": "role_default",
+                "attributes.jumping": "role_default",
+                "attributes.stamina": "role_default",
+                "attributes.consistency": "role_default",
+                "attributes.experience": "role_default"
+              }
+            }
           },
           {
             "id": "a-libero",
             "name": "Arkadiusz Libero",
-            "role": "L"
+            "role": "L",
+            "profile": {
+              "schemaVersion": 1,
+              "skills": {
+                "servePower": 10,
+                "serveAccuracy": 10,
+                "reception": 78,
+                "setting": 45,
+                "attack": 5,
+                "block": 5,
+                "defense": 80
+              },
+              "attributes": {
+                "jumping": 40,
+                "stamina": 70,
+                "consistency": 68,
+                "experience": 60
+              },
+              "positions": {
+                "primary": "L",
+                "secondary": []
+              },
+              "sources": {
+                "skills.servePower": "role_default",
+                "skills.serveAccuracy": "role_default",
+                "skills.reception": "role_default",
+                "skills.setting": "role_default",
+                "skills.attack": "role_default",
+                "skills.block": "role_default",
+                "skills.defense": "role_default",
+                "attributes.jumping": "role_default",
+                "attributes.stamina": "role_default",
+                "attributes.consistency": "role_default",
+                "attributes.experience": "role_default"
+              }
+            }
           }
         ]
       },
@@ -66,37 +311,282 @@
           {
             "id": "b-setter",
             "name": "Bartosz Rozgrywający",
-            "role": "S"
+            "role": "S",
+            "profile": {
+              "schemaVersion": 1,
+              "skills": {
+                "servePower": 55,
+                "serveAccuracy": 65,
+                "reception": 40,
+                "setting": 78,
+                "attack": 45,
+                "block": 50,
+                "defense": 60
+              },
+              "attributes": {
+                "jumping": 60,
+                "stamina": 70,
+                "consistency": 65,
+                "experience": 60
+              },
+              "positions": {
+                "primary": "S",
+                "secondary": []
+              },
+              "sources": {
+                "skills.servePower": "role_default",
+                "skills.serveAccuracy": "role_default",
+                "skills.reception": "role_default",
+                "skills.setting": "role_default",
+                "skills.attack": "role_default",
+                "skills.block": "role_default",
+                "skills.defense": "role_default",
+                "attributes.jumping": "role_default",
+                "attributes.stamina": "role_default",
+                "attributes.consistency": "role_default",
+                "attributes.experience": "role_default"
+              }
+            }
           },
           {
             "id": "b-opp",
             "name": "Bogdan Atakujący",
-            "role": "OPP"
+            "role": "OPP",
+            "profile": {
+              "schemaVersion": 1,
+              "skills": {
+                "servePower": 75,
+                "serveAccuracy": 55,
+                "reception": 30,
+                "setting": 25,
+                "attack": 78,
+                "block": 60,
+                "defense": 45
+              },
+              "attributes": {
+                "jumping": 70,
+                "stamina": 65,
+                "consistency": 60,
+                "experience": 60
+              },
+              "positions": {
+                "primary": "OPP",
+                "secondary": []
+              },
+              "sources": {
+                "skills.servePower": "role_default",
+                "skills.serveAccuracy": "role_default",
+                "skills.reception": "role_default",
+                "skills.setting": "role_default",
+                "skills.attack": "role_default",
+                "skills.block": "role_default",
+                "skills.defense": "role_default",
+                "attributes.jumping": "role_default",
+                "attributes.stamina": "role_default",
+                "attributes.consistency": "role_default",
+                "attributes.experience": "role_default"
+              }
+            }
           },
           {
             "id": "b-oh-1",
             "name": "Bartłomiej Przyjmujący",
-            "role": "OH"
+            "role": "OH",
+            "profile": {
+              "schemaVersion": 1,
+              "skills": {
+                "servePower": 62,
+                "serveAccuracy": 62,
+                "reception": 70,
+                "setting": 35,
+                "attack": 70,
+                "block": 52,
+                "defense": 62
+              },
+              "attributes": {
+                "jumping": 65,
+                "stamina": 70,
+                "consistency": 60,
+                "experience": 60
+              },
+              "positions": {
+                "primary": "OH",
+                "secondary": []
+              },
+              "sources": {
+                "skills.servePower": "role_default",
+                "skills.serveAccuracy": "role_default",
+                "skills.reception": "role_default",
+                "skills.setting": "role_default",
+                "skills.attack": "role_default",
+                "skills.block": "role_default",
+                "skills.defense": "role_default",
+                "attributes.jumping": "role_default",
+                "attributes.stamina": "role_default",
+                "attributes.consistency": "role_default",
+                "attributes.experience": "role_default"
+              }
+            }
           },
           {
             "id": "b-oh-2",
             "name": "Borys Przyjmujący",
-            "role": "OH"
+            "role": "OH",
+            "profile": {
+              "schemaVersion": 1,
+              "skills": {
+                "servePower": 62,
+                "serveAccuracy": 62,
+                "reception": 70,
+                "setting": 35,
+                "attack": 70,
+                "block": 52,
+                "defense": 62
+              },
+              "attributes": {
+                "jumping": 65,
+                "stamina": 70,
+                "consistency": 60,
+                "experience": 60
+              },
+              "positions": {
+                "primary": "OH",
+                "secondary": []
+              },
+              "sources": {
+                "skills.servePower": "role_default",
+                "skills.serveAccuracy": "role_default",
+                "skills.reception": "role_default",
+                "skills.setting": "role_default",
+                "skills.attack": "role_default",
+                "skills.block": "role_default",
+                "skills.defense": "role_default",
+                "attributes.jumping": "role_default",
+                "attributes.stamina": "role_default",
+                "attributes.consistency": "role_default",
+                "attributes.experience": "role_default"
+              }
+            }
           },
           {
             "id": "b-mb-1",
             "name": "Bruno Środkowy",
-            "role": "MB"
+            "role": "MB",
+            "profile": {
+              "schemaVersion": 1,
+              "skills": {
+                "servePower": 58,
+                "serveAccuracy": 62,
+                "reception": 20,
+                "setting": 25,
+                "attack": 65,
+                "block": 76,
+                "defense": 35
+              },
+              "attributes": {
+                "jumping": 70,
+                "stamina": 65,
+                "consistency": 62,
+                "experience": 60
+              },
+              "positions": {
+                "primary": "MB",
+                "secondary": []
+              },
+              "sources": {
+                "skills.servePower": "role_default",
+                "skills.serveAccuracy": "role_default",
+                "skills.reception": "role_default",
+                "skills.setting": "role_default",
+                "skills.attack": "role_default",
+                "skills.block": "role_default",
+                "skills.defense": "role_default",
+                "attributes.jumping": "role_default",
+                "attributes.stamina": "role_default",
+                "attributes.consistency": "role_default",
+                "attributes.experience": "role_default"
+              }
+            }
           },
           {
             "id": "b-mb-2",
             "name": "Błażej Środkowy",
-            "role": "MB"
+            "role": "MB",
+            "profile": {
+              "schemaVersion": 1,
+              "skills": {
+                "servePower": 58,
+                "serveAccuracy": 62,
+                "reception": 20,
+                "setting": 25,
+                "attack": 65,
+                "block": 76,
+                "defense": 35
+              },
+              "attributes": {
+                "jumping": 70,
+                "stamina": 65,
+                "consistency": 62,
+                "experience": 60
+              },
+              "positions": {
+                "primary": "MB",
+                "secondary": []
+              },
+              "sources": {
+                "skills.servePower": "role_default",
+                "skills.serveAccuracy": "role_default",
+                "skills.reception": "role_default",
+                "skills.setting": "role_default",
+                "skills.attack": "role_default",
+                "skills.block": "role_default",
+                "skills.defense": "role_default",
+                "attributes.jumping": "role_default",
+                "attributes.stamina": "role_default",
+                "attributes.consistency": "role_default",
+                "attributes.experience": "role_default"
+              }
+            }
           },
           {
             "id": "b-libero",
             "name": "Benedykt Libero",
-            "role": "L"
+            "role": "L",
+            "profile": {
+              "schemaVersion": 1,
+              "skills": {
+                "servePower": 10,
+                "serveAccuracy": 10,
+                "reception": 78,
+                "setting": 45,
+                "attack": 5,
+                "block": 5,
+                "defense": 80
+              },
+              "attributes": {
+                "jumping": 40,
+                "stamina": 70,
+                "consistency": 68,
+                "experience": 60
+              },
+              "positions": {
+                "primary": "L",
+                "secondary": []
+              },
+              "sources": {
+                "skills.servePower": "role_default",
+                "skills.serveAccuracy": "role_default",
+                "skills.reception": "role_default",
+                "skills.setting": "role_default",
+                "skills.attack": "role_default",
+                "skills.block": "role_default",
+                "skills.defense": "role_default",
+                "attributes.jumping": "role_default",
+                "attributes.stamina": "role_default",
+                "attributes.consistency": "role_default",
+                "attributes.experience": "role_default"
+              }
+            }
           }
         ]
       }

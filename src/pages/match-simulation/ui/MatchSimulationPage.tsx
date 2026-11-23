@@ -2,14 +2,15 @@
 import {useEffect,useMemo,useState} from 'react';
 import {ArrowRightLeft,Dices,Pause,Play,Shield,TrendingUp,UserPlus} from 'lucide-react';
 import fieldBackground from './field.png';
-import {createSeededRng,simulateMatch,summarizeMatch,type MatchInput,type MatchResult,type RallyEndReason} from '../model';
+import {loadPlayerDataset,seasonStartYear,type Player as DatasetPlayer,type PlayerPosition} from '@/shared/player-data';
+import {profileForPlayer} from '../lib/player-profiles';
+import {createSeededRng,simulateMatch,summarizeMatch,type MatchInput,type MatchResult,type ProfileResolution,type RallyEndReason} from '../model';
 
 type TeamId='A'|'B';
 type RotationPosition=1|2|3|4|5|6;
-type PlayerPosition='S'|'OPP'|'OH'|'MB'|'L';
 type TeamSnapshot={id:TeamId;name:string;playerIdsByRotation:Record<RotationPosition,string|null>;liberoId:string|null};
-type Player={id:string;firstName:string;lastName:string;displayName:string;position:PlayerPosition;photoUrl:string|null;heightCm:number|null;birthDate:string|null};
-type PlayerDataset={players:Player[]};
+/** Zawodnik z bazy wraz z rozwiązanym profilem symulacyjnym (SIM-02). */
+type Player=DatasetPlayer&{profile:ProfileResolution};
 
 const positions:RotationPosition[]=[1,2,3,4,5,6];
 const backRowPositions:RotationPosition[]=[5,6,1];
@@ -28,7 +29,11 @@ function toMatchInput(teams:Record<TeamId,TeamSnapshot>,players:Map<string,Playe
       name:snapshot.name,
       rotation:{1:snapshot.playerIdsByRotation[1]!,2:snapshot.playerIdsByRotation[2]!,3:snapshot.playerIdsByRotation[3]!,4:snapshot.playerIdsByRotation[4]!,5:snapshot.playerIdsByRotation[5]!,6:snapshot.playerIdsByRotation[6]!},
       liberoId:snapshot.liberoId,
-      players:ids.map(id=>{const player=players.get(id)!;return {id,name:player.displayName,role:player.position}}),
+      players:ids.map(id=>{
+        const player=players.get(id)!;
+        if(!player.profile.ok)throw new Error(`Zawodnik ${id} nie ma poprawnego profilu`);
+        return {id,name:player.displayName,role:player.position,profile:player.profile.profile};
+      }),
     };
   };
   return {teams:{A:team(teams.A),B:team(teams.B)}};
@@ -62,6 +67,8 @@ function validateTeam(team:TeamSnapshot,players:Map<string,Player>){
   if(all.some(id=>!players.has(id)))reasons.push('niedostępny zawodnik');
   if(selected.some(id=>players.get(id)?.position==='L')||(team.liberoId&&players.get(team.liberoId)?.position!=='L'))reasons.push('libero na nieprawidłowej pozycji');
   if(selected.length===6&&(counts.S!==1||counts.OPP!==1||counts.OH!==2||counts.MB!==2))reasons.push('wymagany skład: 1 S, 1 OPP, 2 OH i 2 MB');
+  const noProfile=all.map(id=>players.get(id)).filter((player):player is Player=>Boolean(player&&!player.profile.ok));
+  if(noProfile.length)reasons.push(`niepoprawny profil symulacyjny: ${noProfile.map(player=>player.lastName).join(', ')}`);
   return reasons;
 }
 
@@ -97,7 +104,11 @@ function StatBar({label,a,b,format=String}:{label:string;a:number;b:number;forma
 
 export function MatchSimulationPage({teams,onRotateTeam,onRandomizeTeams}:{teams:Record<TeamId,TeamSnapshot>;onRotateTeam:(team:TeamId)=>void;onRandomizeTeams:(players:Player[])=>boolean}){
   const[data,setData]=useState<Player[]>([]),[error,setError]=useState<string|null>(null);
-  useEffect(()=>{let active=true;fetch(`${import.meta.env.BASE_URL}data/plusliga-2026-27.json`).then(response=>{if(!response.ok)throw new Error('Nie udało się wczytać zawodników');return response.json()}).then((dataset:PlayerDataset)=>{if(active)setData(dataset.players.map(player=>({...player,photoUrl:player.photoUrl?.startsWith('/')?`${import.meta.env.BASE_URL}${player.photoUrl.slice(1)}`:player.photoUrl})))}).catch(()=>{if(active)setError('Nie udało się wczytać danych zawodników')});return()=>{active=false}},[]);
+  useEffect(()=>{let active=true;loadPlayerDataset().then(dataset=>{
+    // Profil liczony raz przy wczytaniu, deterministycznie — bez losowania przy każdym meczu.
+    const context={seasonStartYear:seasonStartYear(dataset.metadata)};
+    if(active)setData(dataset.players.map(player=>({...player,profile:profileForPlayer(player,context.seasonStartYear)})));
+  }).catch(()=>{if(active)setError('Nie udało się wczytać danych zawodników')});return()=>{active=false}},[]);
   const players=useMemo(()=>new Map(data.map(player=>[player.id,player])),[data]);
   const server=getCourtLineup(teams.A,players).find(slot=>slot.position===1)?.player;
   const[simulation,setSimulation]=useState<Simulation|null>(null);
